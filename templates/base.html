@@ -1,21 +1,29 @@
 <!DOCTYPE html>
+
 <html>
 
-  <head>
-		<title>Web App</title>
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	</head>
+<head>
 
-	<body>
+    <title>Interactive Story</title>
 
-    <div class="container-col">
-      {% block content %}
-      {% endblock %}
-    </div>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 
+</head>
 
+<body>
 
-	</body>
+    {% block content %}
+    {% endblock %}
 
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='turn.js') }}"></script>
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
 
 </html>

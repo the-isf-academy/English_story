@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="library-background">
+    <div class="book-wrapper">
+
+        <div class="flipbook">
+
+            <div class="page">
+                <div class="page-content">
+
+                    <div class="chapter-label">
+                        FINAL REFLECTION
+                    </div>
+
+                    <h1>
+                        {% if ending == "high_fatigue" %}
+                            The Body Keeps Score
+                        {% elif ending == "low_selfworth" %}
+                            Quietly Becoming Smaller
+                        {% elif ending == "high_tension" %}
+                            The Jaw Remembers
+                        {% elif ending == "low_belonging" %}
+                            A House, Not a Home
+                        {% else %}
+                            Learning to Live With It
+                        {% endif %}
+                    </h1>
+
+                    <div class="ornament"></div>
+
+                    <p class="story-text">
+                        {% if ending == "high_fatigue" %}
+                            The sighs come before the thoughts now.
+                            You sit down, you sigh. You stand up, you sigh.
+                            Someone says you are imagining things.
+                            Someone says it wasn’t meant like that.
+
+                            The body keeps score of what the mind forgets.
+                        {% elif ending == "low_selfworth" %}
+                            You begin rehearsing, excusing, translating.
+
+                            One day you hear yourself say something you didn’t choose.
+
+                            The strange thing is how quickly a stranger’s voice
+                            becomes your own thinking.
+
+                        {% elif ending == "high_tension" %}
+                            The words leave your mouth but carry nothing back.
+
+                            You realise your body reacted before you did.
+
+                            Someone tells you to calm down.
+                            You weren’t aware you had moved.
+
+                        {% elif ending == "low_belonging" %}
+                            The room does not accept you.
+
+                            You begin to wonder whether belonging is a place
+                            or the absence of being questioned.
+
+                            It follows you home. It sits beside you.
+
+                        {% else %}
+                            You lose track of which version of yourself answered.
+
+                            The drip never stops.
+
+                            You learn to sit with it.
+                            Tomorrow will ask for another version of you.
+                        {% endif %}
+
+                    </p>
+
+                    <a href="/" class="restart-book-btn">
+                        Read Again
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
