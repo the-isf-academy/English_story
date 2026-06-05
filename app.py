@@ -23,13 +23,15 @@ CHAPTER_ORDER = [
 
 @app.route("/")
 def intro():
-
     session["current_node"] = main_story.first_node.id
 
     session["fatigue"] = 0
     session["belonging"] = 0
     session["selfworth"] = 0
     session["tension"] = 0
+
+    # track the sequence of choices for end-of-story reasoning
+    session["history"] = []
 
     return render_template("intro.html")
 
@@ -55,6 +57,19 @@ def story():
         choice_index = int(request.form.get("choice"))
         chosen_choice = current_node.choices[choice_index]
 
+        # record this choice in the session history
+        hist = session.get("history", [])
+        hist.append({
+            "node_id": current_node.id,
+            "node_title": current_node.title,
+            "choice_title": chosen_choice.title,
+            "fatigue_change": chosen_choice.fatigue_change,
+            "belonging_change": chosen_choice.belonging_change,
+            "selfworth_change": chosen_choice.selfworth_change,
+            "tension_change": chosen_choice.tension_change,
+        })
+        session["history"] = hist
+
         # update stats
         session["fatigue"] += chosen_choice.fatigue_change
         session["belonging"] += chosen_choice.belonging_change
@@ -76,7 +91,14 @@ def story():
             return render_template(
                 "ending.html",
                 node=current_node,
-                ending=ending_type
+                ending=ending_type,
+                history=session.get("history", []),
+                stats={
+                    "fatigue": session.get("fatigue", 0),
+                    "belonging": session.get("belonging", 0),
+                    "selfworth": session.get("selfworth", 0),
+                    "tension": session.get("tension", 0),
+                }
             )
 
         # normal flow
@@ -90,16 +112,27 @@ def story():
     )
 def get_ending(fatigue, selfworth, belonging, tension):
 
-    if fatigue >= 14:
-        return "high_fatigue"
-    elif selfworth <= -6:
-        return "low_selfworth"
-    elif tension >= 12:
-        return "high_tension"
-    elif belonging <= -5:
-        return "low_belonging"
-    else:
-        return "balanced"
+    candidates = {
+        "high_fatigue": fatigue,
+        "low_selfworth": -selfworth,
+        "high_tension": tension,
+        "low_belonging": -belonging,
+    }
+
+    best_ending = max(candidates, key=candidates.get)
+    best_value = candidates[best_ending]
+
+    thresholds = {
+        "high_fatigue": 14,
+        "low_selfworth": 6,
+        "high_tension": 12,
+        "low_belonging": 5,
+    }
+
+    if best_value >= thresholds[best_ending]:
+        return best_ending
+
+    return "balanced"
 if __name__ == "__main__":
 
     app.run(debug=True)

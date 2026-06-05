@@ -86,7 +86,7 @@ body {
 
     overflow: hidden;
 
-    padding: 80px 90px 70px 80px;
+    padding: 80px 90px 70px 75px;
 }
 
 
@@ -106,7 +106,7 @@ h1 {
 
     font-family: 'Cormorant Garamond', serif;
 
-    font-size: 55px;
+    font-size: 40px;
 
     font-weight: 500;
 
@@ -130,10 +130,10 @@ h1 {
 
 .story-text {
     flex: 0 1 auto;
-    max-height: 55%;
+    max-height: 56%;
     overflow-y: auto;
     font-size: 18px;
-    line-height: 2.1; 
+    line-height: 1.8; 
     color: var(--ink-light); 
 }
 

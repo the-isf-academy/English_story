@@ -24,7 +24,7 @@ or whether this moment is reserved only for you.
 
 main_story.add_choice(
     "cricket",
-    "Stay silent and look down",
+    "Stay silent and look down.",
     "socks",
 
     fatigue_change=2,
@@ -34,7 +34,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "cricket",
-    "Force a small laugh to blend in",
+    "Force a small laugh to blend in.",
     "socks",
 
     fatigue_change=1,
@@ -44,7 +44,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "cricket",
-    "Speak up: 'That’s not why I’m here.'",
+    "Speak up quietly: That’s not why I’m here.",
     "socks",
 
     fatigue_change=1,
@@ -104,7 +104,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "socks",
-    "Refuse and storm back to class",
+    "Refuse to take off your socks and storm back to class",
     "bill",
 
     fatigue_change=2,
@@ -156,7 +156,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "bill",
-    "Laugh it off and leave no tip",
+    "Laugh and shake it off but do not leave a tip",
     "loss",
 
     fatigue_change=1,
@@ -189,7 +189,7 @@ The body keeps score of what the mind forgets.
 
 main_story.add_choice(
     "loss",
-    "Push back: 'We don’t need your misogynistic thoughts.'",
+    "Push back again and say: 'We don’t need your misogynistic thoughts, thank you very much.'",
     "colleague",
 
     tension_change=3,
@@ -199,7 +199,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "loss",
-    "Stay quiet behind your mom",
+    "Stay quiet behind your mom again",
     "colleague",
 
     fatigue_change=2,
@@ -209,7 +209,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "loss",
-    "Apologize and accept the food",
+    "Apologize and thank him for the food",
     "colleague",
 
     fatigue_change=3,
@@ -225,17 +225,15 @@ main_story.add_node(
     "colleague",
     "Work Conversation",
     """
-Your younger male colleague says women lose all value after 25.
 
-A divorced woman is like a used car, he says.
+Your younger male colleague says that women lose all value past the age of 25. A woman over 35 is like a second hand good. A divorced woman is like a used car; too stubborn, too much mileage. What did you just say? How have you just said that? What is wrong with you? The words stink like rotten egg over your creased shirt. You feel the slow drip of being measured and found wanting before you have even begun.
 
-The words sit in the air like something rotten.
 """
 )
 
 main_story.add_choice(
     "colleague",
-    "Stay silent",
+    "Stay silent and say nothing",
     "drive",
 
     fatigue_change=2,
@@ -245,7 +243,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "colleague",
-    "Call it out",
+    "You respond, 'That’s a disgusting thing to say. Who are you to measure women?'",
     "drive",
 
     tension_change=3,
@@ -255,7 +253,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "colleague",
-    "Laugh it off",
+    "Try to laugh it off and change the subject",
     "drive",
 
     fatigue_change=2,
@@ -271,21 +269,20 @@ main_story.add_node(
     "drive",
     "Drive Through",
     """
-In line at the drive through, it is finally your turn.
+In line at the drive through it’s finally your turn. You roll down your window and are just about to order when the old man opens his damn mouth first.
+Isn't this car too big for you?
+You stare at him blankly.
 
-An old man looks at you and says:
+I didn’t mean to say that. 
 
-“Isn’t this car too big for you?”
+The transaction goes swiftly after that.  
 
-You stare at him.
-
-The transaction goes swiftly after that.
 """
 )
 
 main_story.add_choice(
     "drive",
-    "Drive away without ordering",
+    "Say nothing and don't order, driving away quickly.",
     "professor",
 
     fatigue_change=2,
@@ -295,7 +292,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "drive",
-    "Respond: 'Excuse me?'",
+    "Reply: 'Excuse me?'",
     "professor",
 
     tension_change=3,
@@ -305,7 +302,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "drive",
-    "Joke: 'Of course I can'",
+    "You force a small smile and joke 'of course I can '",
     "professor",
 
     fatigue_change=1,
@@ -321,12 +318,10 @@ main_story.add_node(
     "professor",
     "Meeting Room",
     """
-You eat quietly at the corner of a meeting room.
+You eat quietly at the corner of a meeting room, and a man, a ‘professor’, wanting to
+make conversation, nursing something, takes out his phone to show you a
+picture of his wife. You say that she is beautiful. She is, he says, a beautiful and intelligent woman, and of course, merely a researcher. Unlike him. 
 
-A professor shows you a picture of his wife.
-
-“She is a beautiful and intelligent woman,” he says,
-“and of course, merely a researcher. Unlike me.”
 """
 )
 
@@ -342,7 +337,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "professor",
-    "Question him",
+    "You say, 'Of course?'",
     "counselor",
 
     tension_change=2,
@@ -352,7 +347,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "professor",
-    "Change the subject",
+    "Change the subject politely",
     "counselor",
 
     fatigue_change=1,
@@ -368,21 +363,21 @@ main_story.add_node(
     "counselor",
     "University Counselor",
     """
-The counselor tells you medicine is unrealistic.
+The new university counselor specializes in future careers. You walk into the room and after a few questions, tells him you want to do medicine. He shakes his head and scorns. To pursue med, you would have to be like Charlie Pienaar, the top scorer in your graduating class, as other counselors have informed him, you might want to consider something more realistic like nursing instead.
 
-You say your name.
+You are Charlie Pienaar, you tell him.It’s as if a wounded Doberman pinscher or a German shepherd has gained the power of speech. You are Charlie Pienaar? He spits back. Then he pauses. Everything pauses. Oh, he says, followed by,, yes, I just thought he-she would be-
 
-He reacts like it doesn’t fit what he expected.
+A guy, you say.
 
-“You are Charlie Pienaar?” he says.
+What? he asks. 
+you instinctively  take two steps back though all urgency leaves the possibility of any kind of relationship as you realize nowhere is where you will get from here.
 
-Then everything pauses.
 """
 )
 
 main_story.add_choice(
     "counselor",
-    "Leave quietly",
+    "Sigh and leave quietly",
     "tv",
 
     fatigue_change=3,
@@ -392,7 +387,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "counselor",
-    "Correct him firmly",
+    "Correct him and firmly restate your goals",
     "tv",
 
     tension_change=3,
@@ -402,7 +397,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "counselor",
-    "Say you'll consider nursing",
+    "Smile and move on, saying you’ll think about nursing.",
     "tv",
 
     fatigue_change=2,
@@ -418,18 +413,9 @@ main_story.add_node(
     "tv",
     "Late Night Television",
     """
-And when the rocket scientists asked Sally Ride whether 100 tampons
-would be enough for a week-long space mission, you fumble for the remote.
 
-You mute the TV for a second, then hesitate.
+And when the rocket scientists asked Sally Ride whether 100 tampons would be enough for a week long space mission, you fumble around for the remote to mute the TV. It is all too exhausting as you realise perhaps each sigh is drawn into existence to pull in, pull under, who knows; truth be told, you could no more control those sighs than that which brings the sighs about.
 
-It is all too exhausting.
-
-You realise perhaps each sigh is drawn into existence
-to pull in, pull under, who knows.
-
-Truth be told, you could no more control those sighs
-than that which brings them about.
 """
 )
 
@@ -445,7 +431,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "tv",
-    "Turn the volume back on and keep watching",
+    "Turn the volume back on and keep watching, hoping for a good response from Sally Ride.",
     None,
 
     fatigue_change=3,
@@ -455,7 +441,7 @@ main_story.add_choice(
 
 main_story.add_choice(
     "tv",
-    "Post on Instagram about their lack of knowledge",
+    "Post on instagram about how frustrating their lack of knowledge is.",
     None,
 
     tension_change=3,
